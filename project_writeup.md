@@ -38,7 +38,7 @@ I delivered the expected rubric points as follow:
 [image2]: ./test_images/test1.jpg "Road Transformed"
 [image3]: ./examples/binary_combo_example.jpg "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
-[image5]: ./examples/color_fit_lines.jpg "Fit Visual"
+[image5]: ./examples/sliding_windows.png "Fit Visual"
 [image6]: ./examples/example_output.jpg "Output"
 [video1]: ./project_video.mp4 "Video"
 
@@ -57,7 +57,7 @@ I delivered the expected rubric points as follow:
 
 #### 1. Briefly state how you computed the camera matrix and distortion coefficients. Provide an example of a distortion corrected calibration image.
 
-The code for this step is contained from cell 2 to 4 in the jupyter notebook provided `advanced_lane_lines.ipyng` located in this repo. Also an testing image prooving undistortion can be found in ('output_images/test_undist.jpg')
+The code for this step is contained from cell 2 to 4 in the jupyter notebook provided `advanced_lane_lines.ipynb` located in this repo. Also an testing image prooving undistortion can be found in ('output_images/test_undist.jpg')
 
 I start by preparing "object points", which will be the (x, y, z) coordinates of the chessboard corners in the world. Here I am assuming the chessboard is fixed on the (x, y) plane at z=0, such that the object points are the same for each calibration image.  Thus, `objp` is just a replicated array of coordinates, and `objpoints` will be appended with a copy of it every time I successfully detect all chessboard corners in a test image.  `imgpoints` will be appended with the (x, y) pixel position of each of the corners in the image plane with each successful chessboard detection.  
 
@@ -72,11 +72,11 @@ I then used the output `objpoints` and `imgpoints` to compute the camera calibra
 To demonstrate this step, I will describe how I apply the distortion correction to one of the test images like this one:
 ![alt text][image2]
 
-Also available at the cell 5 in the notebook `advanced_lane_lines.ipyng`
+Also available at the cell 5 in the notebook `advanced_lane_lines.ipynb`
 
 #### 2. Describe how (and identify where in your code) you used color transforms, gradients or other methods to create a thresholded binary image.  Provide an example of a binary image result.
 
-I used a combination of color and gradient thresholds to generate a binary image (Helpef function and thresholding steps at cells 10 through 18 in `advanced_lane_lines.ipyng`). 
+I used a combination of color and gradient thresholds to generate a binary image (Helpef function and thresholding steps at cells 10 through 18 in `advanced_lane_lines.ipynb`). 
 
 ```# Analyze images resulting
 
@@ -91,7 +91,7 @@ flatten_results = [item for sublist in results_title for item in sublist]
 
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
-I performed a perspective transformation from line 23 to 27 in `advanced_lane_lines.ipyng`, basically using source and destination points, the `warper()` code takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
+I performed a perspective transformation from line 23 to 27 in `advanced_lane_lines.ipynb`, basically using source and destination points, the `warper()` code takes as inputs an image (`img`), as well as source (`src`) and destination (`dst`) points.  I chose the hardcode the source and destination points in the following manner:
 
 ```python
 src = np.float32([ 
@@ -121,7 +121,7 @@ I verified that my perspective transform was working as expected by drawing the 
 
 #### 4. Describe how (and identify where in your code) you identified lane-line pixels and fit their positions with a polynomial?
 
-I applied the helper functions related to Finding Lane Lanes in cell 28 in the notebook `advanced_lane_lines.ipyng`, First I define the conversion (pixels to meters), `ym_per_pix = 30/720` and `xm_per_pix = 3.7/700` and used the following functions:
+I applied the helper functions related to Finding Lane Lanes in cell 28 in the notebook `advanced_lane_lines.ipynb`, First I define the conversion (pixels to meters), `ym_per_pix = 30/720` and `xm_per_pix = 3.7/700` and used the following functions:
 
 * `find_lines`, find the polynomial representation of the lines.
 * `visualize_lanes`, visualize the windows and fitted lines for `image`.
@@ -137,7 +137,7 @@ images_poly = lanes_on_image(test_images)
 
 #### 5. Describe how (and identify where in your code) you calculated the radius of curvature of the lane and the position of the vehicle with respect to center.
 
-I applied the helper functions related to calculate the radius of the curvature of the lane and the position of the vehicle with respect to the center in cell 28 in the notebook `advanced_lane_lines.ipyng`, and used the following functions:
+I applied the helper functions related to calculate the radius of the curvature of the lane and the position of the vehicle with respect to the center in cell 28 in the notebook `advanced_lane_lines.ipynb`, and used the following functions:
 
 * `calculate_curvature`, returns the curvature of the polynomial `fit` on the y range `yRange`.
 * `draw_lines`, draw the lane lines on the image `img` using the poly `left_fit` and `right_fit`.
@@ -146,7 +146,7 @@ I applied the helper functions related to calculate the radius of the curvature 
 
 #### 6. Provide an example image of your result plotted back down onto the road such that the lane area is identified clearly.
 
-I applied the helper functions related to result of the whole **pipeline** in cell 28 in the notebook `advanced_lane_lines.ipyng`, and used the following functions:
+I applied the helper functions related to result of the whole **pipeline** in cell 28 in the notebook `advanced_lane_lines.ipynb`, and used the following functions:
 
 * `pipeline`, find and draw the lane lines on the image `img`.
 
@@ -158,7 +158,7 @@ I applied the helper functions related to result of the whole **pipeline** in ce
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (wobbly lines are ok but no catastrophic failures that would cause the car to drive off the road!).
 
-Please refer to the functions *describing text* in cell 34 for details in how I applied the pipeline in the video.
+Please refer to the functions *describing text* in cell 34 in the notebook `advanced_lane_lines.ipynb` for details in how I applied the pipeline in the video.
 
 Here's a [link to my video result](./project_video.mp4)
 
@@ -168,4 +168,4 @@ Here's a [link to my video result](./project_video.mp4)
 
 #### 1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+Was pretty interesting to me to play around all the gradients, channel colors, and apropiate thresholds for each type of image and challenging to find a *common* approach to the final binary **combined** result. In deed, it took me a while that part, and when failing the first times, was the first thing to double check without success, since the lane lines finding issues I faced were related to properly identify the area of interest and that influenced directly my scaled window approach. I guess for now, I am satisfied and wanting to test it with the challenge videos and my own. 
