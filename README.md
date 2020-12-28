@@ -7,15 +7,27 @@ This project's goal is to code a software pipeline to identify the lane boundari
 I delivered the expected rubric points as follow:
 
 * Project Readme
+
 * A jupyter notebook containing detailed steps followed to approach the solution.
-    * `Camera calibration`: extract matrix and distortion coefficients. Provided distortion correction to raw images ![Tested Image](./output_images/test_undist.jpg)
-    * `Sobel, gradients and color transform` to create a thresholded binary image, obtained through the function helpers properly identified at the notebook. Conveniently displayed for each method, including the resulting conbination of the final pipeline.
-    * `Perspective transformation` is also applied and tested (Please refer to the writeup to see example)
-    * Method used to `identify lane line pixels` (See notebook for detailed guide through)
-    * Determine radius of `curvature` of the lane and the position of the vehicle with respect to center.
-    * `Warp` the detected lane boundaries back onto the original image.
-    * Output `visual display` of the lane boundaries and numerical estimation of lane curvature and vehicle position. Resulting `pipeline application` to the road images, displaying successfully lane line recognition.
-* Final ![video output](./output_video/project_video.mp4)
+
+    * **Camera calibration**: extract matrix and distortion coefficients. Provided distortion correction to raw images 
+    
+    ![Tested Image](./output_images/test_undist.jpg)
+
+    * **Sobel, gradients and color transform** to create a thresholded binary image, obtained through the function helpers properly identified at the notebook. Conveniently displayed for each method, including the resulting conbination of the final pipeline.
+
+    * **Perspective transformation** is also applied and tested *(Please refer to the writeup to see example)*
+
+    * Method used to **identify lane line pixels** *(See notebook for detailed guide through)*
+
+    * Determine radius of **curvature** of the lane and the position of the vehicle with respect to center.
+
+    * **Warp** the detected lane boundaries back onto the original image.
+
+    * Output **visual display** of the lane boundaries and numerical estimation of lane curvature and vehicle position. Resulting **pipeline application** to the road images, displaying successfully lane line recognition.
+
+* Final ![video output](output_video/project_video.mp4)
+
 * Project ![writeup](project_writeup.md)
 
 
