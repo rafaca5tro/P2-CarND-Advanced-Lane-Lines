@@ -39,7 +39,7 @@ I delivered the expected rubric points as follow:
 [image3]: ./examples/binary_testing.png "Binary Example"
 [image4]: ./examples/warped_straight_lines.jpg "Warp Example"
 [image5]: ./examples/sliding_windows.png "Fit Visual"
-[image6]: ./examples/example_output.jpg "Output"
+[image6]: ./examples/resulting_display.jpg "Resulting Display"
 [image7]: ./examples/line_drawing.png "lines drawing"
 [video1]: ./project_video.mp4 "Video"
 
