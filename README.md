@@ -12,7 +12,7 @@ I delivered the expected rubric points as follow:
 
     * **Camera calibration**: extract matrix and distortion coefficients. Provided distortion correction to raw images 
     
-    [!Tested Image](./output_images/test_undist.jpg)
+    [Tested Image](./output_images/test_undist.jpg)
 
     * **Sobel, gradients and color transform** to create a thresholded binary image, obtained through the function helpers properly identified at the notebook. Conveniently displayed for each method, including the resulting conbination of the final pipeline.
 
@@ -26,9 +26,9 @@ I delivered the expected rubric points as follow:
 
     * Output **visual display** of the lane boundaries and numerical estimation of lane curvature and vehicle position. Resulting **pipeline application** to the road images, displaying successfully lane line recognition.
 
-* Final [!video output](output_video/project_video.mp4)
+* Final [video output](output_video/project_video.mp4)
 
-* Project [!writeup](project_writeup.md)
+* Project [writeup](project_writeup.md)
 
 
 
@@ -36,4 +36,4 @@ The images for camera calibration are stored in the folder called `camera_cal`. 
 
 Saved examples of the output from each stage of the pipeline are in the folder called `output_images`, and include a description in your writeup for the project of what each image shows.    The video called `project_video.mp4` is in the folder `output_video`.  
 
-For detailed guide through please refer to the project ![writeup](project_writeup.md)
+For detailed guide through please refer to the project [writeup](project_writeup.md)
